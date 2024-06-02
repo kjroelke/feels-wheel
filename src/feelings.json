@@ -1,0 +1,143 @@
+{
+	"happy": {
+		"2": [
+			"playful",
+			"content",
+			"interested",
+			"proud",
+			"accepted",
+			"powerful",
+			"peaceful",
+			"trusting",
+			"optimistic"
+		],
+		"3": [
+			"aroused",
+			"cheeky",
+			"free",
+			"joyful",
+			"curious",
+			"inquisitive",
+			"successful",
+			"confident",
+			"respected",
+			"valued",
+			"courageous",
+			"creative",
+			"loving",
+			"sensitive",
+			"hopeful",
+			"inspired"
+		]
+	},
+	"sad": {
+		"2": ["lonely", "vulnerable", "despair", "guilty", "depressed", "hurt"],
+		"3": [
+			"isolated",
+			"abandoned",
+			"victimized",
+			"fragile",
+			"grief",
+			"powerless",
+			"ashamed",
+			"remorseful",
+			"empty",
+			"inferior",
+			"disappointed",
+			"embarrassed"
+		]
+	},
+	"angry": {
+		"2": [
+			"Let down",
+			"humiliated",
+			"bitter",
+			"mad",
+			"aggressive",
+			"frustrated",
+			"distant",
+			"critical"
+		],
+		"3": [
+			"Betrayed",
+			"resentful",
+			"disrespected",
+			"ridiculed",
+			"indignant",
+			"violated",
+			"furious",
+			"jealous",
+			"provoked",
+			"hostile",
+			"infuriated",
+			"annoyed",
+			"withdrawn",
+			"numb",
+			"skeptical",
+			"dismissive"
+		]
+	},
+	"afraid": {
+		"2": [
+			"scared",
+			"anxious",
+			"insecure",
+			"weak",
+			"rejected",
+			"threatened"
+		],
+		"3": [
+			"helpless",
+			"frightened",
+			"overwhelmed",
+			"worried",
+			"inadequate",
+			"inferior",
+			"worthless",
+			"insignificant",
+			"excluded",
+			"persecuted",
+			"nervous",
+			"exposed"
+		]
+	},
+	"disgusted": {
+		"2": ["disapproving", "disappointed", "awful", "repelled"],
+		"3": [
+			"judgmental",
+			"embarrassed",
+			"appalled",
+			"revolted",
+			"nauseated",
+			"detestable",
+			"horrified",
+			"hesitant"
+		]
+	},
+	"surprised": {
+		"2": ["startled", "confused", "amazed", "excited"],
+		"3": [
+			"shocked",
+			"dismayed",
+			"disillusioned",
+			"perplexed",
+			"astonished",
+			"awe",
+			"eager",
+			"energetic"
+		]
+	},
+	"bad": {
+		"2": ["bored", "busy", "stressed", "tired"],
+		"3": [
+			"indifferent",
+			"apathetic",
+			"pressured",
+			"rushed",
+			"overwhelmed",
+			"out of control",
+			"sleepy",
+			"unfocused"
+		]
+	}
+}

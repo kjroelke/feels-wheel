@@ -1,0 +1,77 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { capitalizeIt } from '../components/FeelsWheel/utilities';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+interface Props {
+	pageTitle: string;
+	pageHeader: string;
+	words: {
+		'2': string[];
+		'3': string[];
+	};
+	baseColor: string;
+}
+
+const { pageTitle: metaPageTitle, pageHeader, words, baseColor } = Astro.props;
+
+const breacrumbClass = `underline underline-offset-4 text-neutral-900 dark:text-neutral-50 font-bold hover:text-${baseColor}-500 dark:hover:text-${baseColor}-300`;
+
+const colors = {
+	happy: 'text-yellow-500 dark:text-yellow-300',
+	sadness: 'text-blue-500 text-blue-300',
+	anger: 'text-red-500 text-red-300',
+	fear: 'text-gray-500 text-gray-300',
+	surprise: 'text-purple-500 text-purple-300',
+	disgust: 'text-green-500 text-green-300',
+	bad: 'text-orange-500 text-orange-300',
+};
+
+const headerColor = colors[pageHeader.toLowerCase()];
+---
+
+<BaseLayout title={metaPageTitle}>
+	<main class='container'>
+		<Breadcrumb twClass={breacrumbClass} />
+		<header class='text-center my-8'>
+			<h1 class={`${headerColor} font-black text-4xl`}>
+				{pageHeader} Feelings
+			</h1>
+			<p class='text-neutral-900 dark:text-neutral-50'>
+				Words related to feeling "{pageHeader.toLowerCase()}"
+			</p>
+		</header>
+		<section>
+			<h2 class={`${headerColor} text-3xl text-center my-5 font-black`}>
+				Level 2 (Strong Feelings)
+			</h2>
+			<ul
+				class='mx-0 px-0 text-neutral-900 dark:text-neutral-50 grid auto-cols-auto lg:grid-cols-3 gap-2'>
+				{
+					words['2'].map((word) => (
+						<li
+							class={`text-center p-6 rounded border-solid border-${baseColor}-500 dark:border-${baseColor}-300`}>
+							{capitalizeIt(word)}
+						</li>
+					))
+				}
+			</ul>
+		</section>
+		<section>
+			<h2 class={`${headerColor} text-3xl my-5 text-center font-black`}>
+				Level 3 (Intense Feelings)
+			</h2>
+			<ul
+				class='mx-0 px-0 text-neutral-900 dark:text-neutral-50 grid auto-cols-auto lg:grid-cols-3'>
+				{
+					words['3'].map((word) => (
+						<li
+							class={`text-center p-6 rounded border-solid border-${baseColor}-500 dark:border-${baseColor}-300`}>
+							{capitalizeIt(word)}
+						</li>
+					))
+				}
+			</ul>
+		</section>
+	</main>
+</BaseLayout>

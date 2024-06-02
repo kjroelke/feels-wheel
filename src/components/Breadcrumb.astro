@@ -1,0 +1,19 @@
+---
+interface Props {
+	twClass?: string;
+}
+
+const { twClass } = Astro.props;
+
+const breadcrumbClass = twClass
+	? twClass
+	: 'underline underline-offset-4 text-neutral-900 dark:text-neutral-50 font-bold';
+---
+
+<nav class='my-5'>
+	<a
+		class={breadcrumbClass}
+		href='/feels-wheel'
+		>Back to the Wheel</a
+	>
+</nav>
