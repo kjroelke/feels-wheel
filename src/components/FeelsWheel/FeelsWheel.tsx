@@ -68,8 +68,8 @@ export default function FeelsWheel({ words }: { words: Feels }) {
 							setIntensity(ev.target.value as '2' | '3')
 						}>
 						<option value=''>Select an Intensity</option>
-						<option value='2'>Intense</option>
-						<option value='3'>Super Intense</option>
+						<option value='2'>Strong</option>
+						<option value='3'>Intense</option>
 					</select>
 				</div>
 				<button
