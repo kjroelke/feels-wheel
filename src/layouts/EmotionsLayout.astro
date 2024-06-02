@@ -5,7 +5,14 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 
 interface Props {
 	pageTitle: string;
-	pageHeader: string;
+	pageHeader:
+		| 'happy'
+		| 'sadness'
+		| 'anger'
+		| 'fear'
+		| 'surprise'
+		| 'disgust'
+		| 'bad';
 	words: {
 		'2': string[];
 		'3': string[];
@@ -27,7 +34,7 @@ const colors = {
 	bad: 'text-orange-500 text-orange-300',
 };
 
-const headerColor = colors[pageHeader.toLowerCase()];
+const headerColor = colors[pageHeader.toLowerCase() as keyof typeof colors];
 ---
 
 <BaseLayout title={metaPageTitle}>
