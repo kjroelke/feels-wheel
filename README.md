@@ -1,3 +1,14 @@
-# Astro Starter
+# Feels Wheel
 
-Quick startup for Astro w/ Bun, React and Tailwind.
+A simple feelings word generator.
+
+# Changelog
+
+## v1.0.1
+
+-   Added colors
+-   Added Footer
+
+## v1.0.0
+
+-   init!
