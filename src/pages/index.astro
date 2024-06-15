@@ -3,75 +3,76 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
 import FeelsWheel from '../components/FeelsWheel/FeelsWheel';
 import words from '../feelings.json';
+
+const cards = [
+    {
+        href: 'anger',
+        title: 'Anger',
+    },
+    {
+        href: 'fear',
+        title: 'Fear',
+    },
+    {
+        href: 'joy',
+        title: 'Joyful',
+    },
+    {
+        href: 'peace',
+        title: 'Peaceful',
+    },
+    {
+        href: 'power',
+        title: 'Powerful Words',
+    },
+    {
+        href: 'sadness',
+        title: 'Sad',
+    },
+];
 ---
 
 <BaseLayout title='Feels Wheel'>
-	<header
-		class='p-4 w-[800px] max-w-[calc(100%-2rem)] text-neutral-900 dark:text-neutral-50 text-md/relaxed container mx-auto'>
-		<h1
-			class='dark:text-neutral-50 text-neutral-900 text-[4rem] mb-4 text-center font-bold'>
-			The <span class='text-gradient'>Feels Wheel</span>
-		</h1>
-		<p class='dark:text-neutral-50 text-neutral-900 mb-7'>
-			It's hard to express how you're feeling if all you have are simple
-			emotions like "happy" or "sad." The Feels Wheel is a tool to help
-			you find the right words to describe your emotions.
-			<a
-				href='/feels-wheel/about'
-				class='mt-4 underline block font-medium'
-				>Learn more about the feelings wheel.</a
-			>
-		</p>
-	</header>
-	<FeelsWheel
-		client:load
-		words={words}
-	/>
-	<main
-		class='p-4 w-[800px] max-w-[calc(100%-2rem)] text-neutral-900 dark:text-neutral-50 text-md/relaxed container mx-auto'>
-		<section class='my-5'>
-			<h2 class='text-3xl font-black text-center text-gradient'>
-				Browse Words by Category
-			</h2>
-			<ul
-				role='list'
-				class='grid grid-cols-[repeat(auto-fit,_minmax(24ch,_1fr))] p-0 gap-8'>
-				<Card
-					href='/feels-wheel/happiness'
-					title='Happy Words'
-					body='View the words that fall into the "happy" category.'
-				/>
-				<Card
-					href='/feels-wheel/sadness'
-					title='Sad Words'
-					body='View the words that fall into the "sad" category.'
-				/>
-				<Card
-					href='/feels-wheel/anger'
-					title='Angry Words'
-					body='View the words that fall into the "angry" category.'
-				/>
-				<Card
-					href='/feels-wheel/fear'
-					title='Fear Words'
-					body='View the words that fall into the "fear" category.'
-				/>
-				<Card
-					href='/feels-wheel/disgust'
-					title='Disgust Words'
-					body='View the words that fall into the "disgust" category.'
-				/>
-				<Card
-					href='/feels-wheel/surprise'
-					title='Surprise Words'
-					body='View the words that fall into the "surprise" category.'
-				/>
-				<Card
-					href='/feels-wheel/bad'
-					title='Bad Words'
-					body='View the words that fall into the "Bad" category.'
-				/>
-			</ul>
-		</section>
-	</main>
+    <header
+        class='p-4 w-[800px] max-w-[calc(100%-2rem)] text-neutral-900 dark:text-neutral-50 text-md/relaxed container mx-auto'>
+        <h1
+            class='dark:text-neutral-50 text-neutral-900 text-[4rem] mb-4 text-center font-bold'>
+            The <span class='text-gradient'>Feels Wheel</span>
+        </h1>
+        <p class='dark:text-neutral-50 text-neutral-900 mb-7'>
+            It's hard to express how you're feeling if all you have are simple
+            emotions like "happy" or "sad." The Feels Wheel is a tool to help
+            you find the right words to describe your emotions.
+            <a
+                href='/feels-wheel/about'
+                class='mt-4 underline block font-medium'
+                >Learn more about the feelings wheel.</a
+            >
+        </p>
+    </header>
+    <FeelsWheel
+        client:load
+        words={words}
+    />
+    <main
+        class='p-4 w-[800px] max-w-[calc(100%-2rem)] text-neutral-900 dark:text-neutral-50 text-md/relaxed container mx-auto'>
+        <section class='my-5'>
+            <h2 class='text-3xl font-black text-center text-gradient'>
+                Browse Words by Category
+            </h2>
+            <ul
+                role='list'
+                class='grid grid-cols-[repeat(auto-fit,_minmax(24ch,_1fr))] p-0 gap-8'>
+                {
+                    cards.map(({ href, title }) => (
+                        <Card
+                            href={`/feels-wheel/${href}`}
+                            title={`${title} Words`}
+                            body={`View the words that fall into the "${title.toLowerCase()}" category.`}
+                        />
+                    ))
+                }
+            </ul>
+        </section>
+    </main>
 </BaseLayout>
