@@ -4,98 +4,110 @@ import { capitalizeIt } from '../components/FeelsWheel/utilities';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
 interface Props {
-	pageTitle: string;
-	pageHeader: string;
-	words: {
-		'2': string[];
-		'3': string[];
-	};
-	baseColor: string;
+    pageTitle: string;
+    pageHeader: string;
+    words: {
+        '2': string[];
+        '3': string[];
+        'opposite': string;
+    };
 }
 
-const { pageTitle: metaPageTitle, pageHeader, words, baseColor } = Astro.props;
+const feelingHref = {
+    anger: 'anger',
+    fear: 'fear',
+    joyful: 'joy',
+    peaceful: 'peace',
+    powerful: 'power',
+    sadness: 'sadness',
+    scared: 'fear',
+};
 
-const breacrumbClass = `underline underline-offset-4 text-neutral-900 dark:text-neutral-50 font-bold hover:text-${baseColor}-500 dark:hover:text-${baseColor}-300`;
+const { pageTitle: metaPageTitle, pageHeader, words } = Astro.props;
 
 const colors = {
-	happy: {
-		text: 'text-yellow-500 dark:text-yellow-300',
-		border: 'border-yellow-300 dark:border-yellow-500',
-	},
-	sadness: {
-		text: 'text-blue-500 dark:text-blue-300',
-		border: 'border-blue-500 dark:border-blue-300',
-	},
-	anger: {
-		text: 'text-red-500 dark:text-red-500',
-		border: 'border-red-500 dark:border-red-500',
-	},
-	fear: {
-		text: 'text-gray-500 dark:text-gray-300',
-		border: 'border-gray-500 dark:border-gray-300',
-	},
-	surprise: {
-		text: 'text-purple-500 dark:text-purple-500',
-		border: 'border-purple-500 dark:border-purple-500',
-	},
-	disgust: {
-		text: 'text-green-500 dark:text-green-500',
-		border: 'border-green-500 dark:border-green-500',
-	},
-	bad: {
-		text: 'text-orange-500 dark:text-orange-500',
-		border: 'border-orange-500 dark:border-orange-500',
-	},
+    joyful: {
+        text: 'text-yellow-500 dark:text-yellow-300',
+        border: 'border-yellow-500 dark:border-yellow-300',
+    },
+    peaceful: {
+        text: 'text-blue-500 dark:text-blue-300',
+        border: 'border-blue-500 dark:border-blue-300',
+    },
+    anger: {
+        text: 'text-red-500 dark:text-red-500',
+        border: 'border-red-500 dark:border-red-500',
+    },
+    fear: {
+        text: 'text-orange-500 dark:text-orange-500',
+        border: 'border-orange-500 dark:border-orange-500',
+    },
+    sadness: {
+        text: 'text-purple-500 dark:text-purple-500',
+        border: 'border-purple-500 dark:border-purple-500',
+    },
+    powerful: {
+        text: 'text-green-500 dark:text-green-500',
+        border: 'border-green-500 dark:border-green-500',
+    },
 };
 
 const borderColor =
-	colors[pageHeader.toLowerCase() as keyof typeof colors].border;
+    colors[pageHeader.toLowerCase() as keyof typeof colors].border;
 const headerColor =
-	colors[pageHeader.toLowerCase() as keyof typeof colors].text;
+    colors[pageHeader.toLowerCase() as keyof typeof colors].text;
 ---
 
 <BaseLayout title={`${metaPageTitle} | Feels Wheel | K.J. Roelke`}>
-	<main class='container'>
-		<Breadcrumb twClass={breacrumbClass} />
-		<header class='text-center my-8'>
-			<h1 class={`${headerColor} font-black text-4xl`}>
-				{pageHeader} Feelings
-			</h1>
-			<p class='text-neutral-900 dark:text-neutral-50'>
-				Words related to feeling "{pageHeader.toLowerCase()}"
-			</p>
-		</header>
-		<section>
-			<h2 class={`${headerColor} text-3xl text-center my-5 font-black`}>
-				Level 2 (Strong Feelings)
-			</h2>
-			<ul
-				class='mx-0 px-0 text-neutral-900 dark:text-neutral-50 grid grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] gap-5'>
-				{
-					words['2'].map((word) => (
-						<li
-							class={`text-center p-6 rounded border-solid ${borderColor} border-2`}>
-							{capitalizeIt(word)}
-						</li>
-					))
-				}
-			</ul>
-		</section>
-		<section>
-			<h2 class={`${headerColor} text-3xl my-5 text-center font-black`}>
-				Level 3 (Intense Feelings)
-			</h2>
-			<ul
-				class='mx-0 px-0 text-neutral-900 dark:text-neutral-50 grid grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] gap-5'>
-				{
-					words['3'].map((word) => (
-						<li
-							class={`text-center p-6 rounded border-solid ${borderColor} border-2`}>
-							{capitalizeIt(word)}
-						</li>
-					))
-				}
-			</ul>
-		</section>
-	</main>
+    <main class='container max-w-prose'>
+        <Breadcrumb
+            twClass='underline underline-offset-4 text-neutral-900 dark:text-neutral-50 font-bold'
+        />
+        <header class='text-center my-8'>
+            <h1 class={`${headerColor} font-black text-4xl`}>
+                {pageHeader} Feelings
+            </h1>
+            <p class='text-neutral-900 dark:text-neutral-50'>
+                Here is a list of words related to feeling "{
+                    pageHeader.toLowerCase()
+                }." <br />The opposite of this feeling is <a
+                    href={`/feels-wheel/${feelingHref[words.opposite as keyof typeof feelingHref]}`}
+                    class={`underline italic font-bold ${colors[words.opposite as keyof typeof colors].text}`}>
+                    {words.opposite}.
+                </a>
+            </p>
+        </header>
+        <section>
+            <h2 class={`${headerColor} text-3xl text-center my-5 font-black`}>
+                Level 2 (Strong Feelings)
+            </h2>
+            <ul
+                class='mx-0 px-0 text-neutral-900 dark:text-neutral-50 grid grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] gap-5'>
+                {
+                    words['2'].map((word) => (
+                        <li
+                            class={`text-center p-6 rounded border-solid ${borderColor} border-2`}>
+                            {capitalizeIt(word)}
+                        </li>
+                    ))
+                }
+            </ul>
+        </section>
+        <section>
+            <h2 class={`${headerColor} text-3xl my-5 text-center font-black`}>
+                Level 3 (Intense Feelings)
+            </h2>
+            <ul
+                class='mx-0 px-0 text-neutral-900 dark:text-neutral-50 grid grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] gap-5'>
+                {
+                    words['3'].map((word) => (
+                        <li
+                            class={`text-center p-6 rounded border-solid ${borderColor} border-2`}>
+                            {capitalizeIt(word)}
+                        </li>
+                    ))
+                }
+            </ul>
+        </section>
+    </main>
 </BaseLayout>
