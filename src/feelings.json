@@ -9,7 +9,7 @@
             "extravagant",
             "delightful"
         ],
-        "opposite": "sad"
+        "opposite": "sadness"
     },
     "sad": {
         "2": ["guilty", "ashamed", "depressed", "lonely", "bored", "sleepy"],
@@ -52,7 +52,7 @@
             "intelligent",
             "confident"
         ],
-        "opposite": "mad"
+        "opposite": "anger"
     },
     "scared": {
         "2": [
@@ -89,6 +89,7 @@
             "serene",
             "sentimental",
             "thankful"
-        ]
+        ],
+        "opposite": "fear"
     }
 }
