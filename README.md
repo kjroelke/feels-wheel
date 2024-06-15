@@ -4,6 +4,10 @@ A simple feelings word generator.
 
 # Changelog
 
+## v1.1.1
+
+-   bug fixes
+
 ## v1.1.0
 
 -   New wheel, new emotions
