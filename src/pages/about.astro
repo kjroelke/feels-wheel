@@ -2,130 +2,130 @@
 import Breadcrumb from '../components/Breadcrumb.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Picture } from 'astro:assets';
-import wheel from '../assets/feels-wheel.jpg';
+import wheel from '../assets/feelings-wheel.png';
 ---
 
 <BaseLayout title='About the Feelings Wheel'>
-	<article
-		class='container text-neutral-900 dark:text-neutral-50 max-w-[800px]'>
-		<Breadcrumb />
-		<h1 class='text-gradient text-4xl font-black text-center'>
-			The Feelings Wheel
-		</h1>
-		<section class='text-neutral-900 dark:text-neutral-50'>
-			<p>
-				The feelings wheel was first introduced in 1982 by Gloria Wilcox <sup
-					><a href='#citation-1'>[1]</a></sup
-				>. While not exhaustive, it is a helpful tool for helping
-				individuals grow in their emotional intelligence by increasing
-				their vocabulary of emotion words.
-			</p>
-			<h2 class='text-3xl font-black mt-4'>The Feelings Wheel Image</h2>
-			<a
-				class='italic underline'
-				href='https://imgur.com/gallery/i-feel-emotional-word-wheel-feel-wheel-tCWChf6'
-				>Borrowed from imgur user Onesimusix with gratitude</a
-			>
-			<Picture
-				class='aspect-square w-full my-4'
-				src={wheel}
-				formats={['webp', 'avif', 'jpeg']}
-				alt='The Feelings wheel graphic'
-			/>
-		</section>
-		<section>
-			<h2 class='text-3xl font-black mt-4'>Advice</h2>
-			<span class='italic'
-				>Quoted directly from a PDF labeled "Positive Psychology
-				Practitioner's Toolit"<a href='#citation-2'><sup>[2]</sup></a
-				></span
-			>
-			<blockquote class='my-6'>
-				<ul class='list-disc ms-6'>
-					<li>
-						Note that the feelings depicted in the Feeling Wheel
-						(see fig. 1) are not a complete overview of all possible
-						feelings and emotions. Rather, they serve as a guide and
-						starting point that may help clients to describe their
-						experiences.
-					</li>
-					<li>
-						Although this exercise can be used in many ways, using
-						it during the day is preferable because the immediate
-						approach circumvents memory distortions or (inaccurate)
-						cognitive representations of the experiences. If the
-						client chooses to use the wheel during the day, the
-						present tool can be nicely combined with the 3 minute
-						coping exercise, which directs attention inward and
-						facilitates connection with the emotional state one is
-						in
-					</li>
-					<li>
-						It can be useful for clients to carry a hardcopy of the
-						Feeling Wheel (see fig. 1) or store a digital image on
-						their phones, so that it can be accessed at any given
-						time.
-					</li>
-					<li>
-						Note that it is possible to experience different
-						emotions at the same time. The emotions and feelings in
-						the wheel are not mutually exclusive, but can exist in
-						many combinations, even positive and negative at the
-						same time.
-					</li>
-					<li>
-						“You cannot heal what you cannot feel”: this tool can
-						also be used when aiming to increase self-compassion. In
-						order to develop self-compassion, it is important to pay
-						attention to the experiences that are present, in order
-						to take appropriate compassionate action. For instance,
-						if a client realized that he or she experiences shame,
-						the kind inner voice that can be cultivated can be
-						focused on the experience of this specific emotion (“It
-						is ok to experience shame; I am a human being and I make
-						mistakes.” “This experience of shame tells me that I can
-						learn from this experience so that I can do it
-						differently next time”.)
-					</li>
-					<li>
-						Note that the negative feelings in the inner band of the
-						wheel are located on the exact opposite side of the
-						wheel than the positive feelings. For instance, the
-						positive core feeling that contrasts with sad is joyful.
-						Although your client may use this information to gain
-						insight in the positive emotions or feelings that are
-						least present and may need further attention (see the
-						tool: positive emotion brainstorm), this feature of the
-						wheel should not be used to replace or avoid emotions.
-						For instance, when a client experiences sadness, it is
-						advisable to allow the sadness to be present rather than
-						to try to replace it with joyful thoughts (see also the
-						tool: acceptance of emotions).
-					</li>
-				</ul>
-			</blockquote>
-		</section>
-		<footer class='my-5 flex flex-col gap-4'>
-			<h2 class='text-2xl font-black'>Citations and Links</h2>
-			<ol class='list-decimal ms-6'>
-				<li>
-					<cite id='citation-1'
-						>Willcox, Gloria. 1982. “The Feeling Wheel: A Tool for
-						Expanding Awareness of Emotions and Increasing
-						Spontaneity and Intimacy.” Transactional Analysis
-						Journal 12 (4): 274–76. doi:10.1177/036215378201200411.</cite
-					>
-				</li>
-				<li>
-					<cite id='citation-2'
-						><a
-							class='underline'
-							href='https://www.gnyha.org/wp-content/uploads/2020/05/The-Feeling-Wheel-Positive-Psycology-Program.pdf'
-							>"Positive Psychology Practitioner's Toolit"</a
-						></cite
-					>
-				</li>
-			</ol>
-		</footer>
-	</article>
+    <article
+        class='container text-neutral-900 dark:text-neutral-50 max-w-[800px]'>
+        <Breadcrumb />
+        <h1 class='text-gradient text-4xl font-black text-center'>
+            The Feelings Wheel
+        </h1>
+        <section class='text-neutral-900 dark:text-neutral-50'>
+            <p>
+                The feelings wheel was first introduced in 1982 by Gloria Wilcox <sup
+                    ><a href='#citation-1'>[1]</a></sup
+                >. While not exhaustive, it is a helpful tool for helping
+                individuals grow in their emotional intelligence by increasing
+                their vocabulary of emotion words.
+            </p>
+            <h2 class='text-3xl font-black mt-4'>The Feelings Wheel Image</h2>
+            Reposted with permission from <a
+                class='italic underline'
+                href='https://allthefeelz.app'
+                >The Feelings Wheel</a
+            > app by Common Zen Media.
+            <Picture
+                class='aspect-square w-full my-4'
+                src={wheel}
+                formats={['webp', 'avif', 'jpeg']}
+                alt='The Feelings wheel graphic'
+            />
+        </section>
+        <section>
+            <h2 class='text-3xl font-black mt-4'>Advice</h2>
+            <span class='italic'
+                >Quoted directly from a PDF labeled "Positive Psychology
+                Practitioner's Toolit"<a href='#citation-2'><sup>[2]</sup></a
+                ></span
+            >
+            <blockquote class='my-6'>
+                <ul class='list-disc ms-6'>
+                    <li>
+                        Note that the feelings depicted in the Feeling Wheel
+                        (see fig. 1) are not a complete overview of all possible
+                        feelings and emotions. Rather, they serve as a guide and
+                        starting point that may help clients to describe their
+                        experiences.
+                    </li>
+                    <li>
+                        Although this exercise can be used in many ways, using
+                        it during the day is preferable because the immediate
+                        approach circumvents memory distortions or (inaccurate)
+                        cognitive representations of the experiences. If the
+                        client chooses to use the wheel during the day, the
+                        present tool can be nicely combined with the 3 minute
+                        coping exercise, which directs attention inward and
+                        facilitates connection with the emotional state one is
+                        in
+                    </li>
+                    <li>
+                        It can be useful for clients to carry a hardcopy of the
+                        Feeling Wheel (see fig. 1) or store a digital image on
+                        their phones, so that it can be accessed at any given
+                        time.
+                    </li>
+                    <li>
+                        Note that it is possible to experience different
+                        emotions at the same time. The emotions and feelings in
+                        the wheel are not mutually exclusive, but can exist in
+                        many combinations, even positive and negative at the
+                        same time.
+                    </li>
+                    <li>
+                        “You cannot heal what you cannot feel”: this tool can
+                        also be used when aiming to increase self-compassion. In
+                        order to develop self-compassion, it is important to pay
+                        attention to the experiences that are present, in order
+                        to take appropriate compassionate action. For instance,
+                        if a client realized that he or she experiences shame,
+                        the kind inner voice that can be cultivated can be
+                        focused on the experience of this specific emotion (“It
+                        is ok to experience shame; I am a human being and I make
+                        mistakes.” “This experience of shame tells me that I can
+                        learn from this experience so that I can do it
+                        differently next time”.)
+                    </li>
+                    <li>
+                        Note that the negative feelings in the inner band of the
+                        wheel are located on the exact opposite side of the
+                        wheel than the positive feelings. For instance, the
+                        positive core feeling that contrasts with sad is joyful.
+                        Although your client may use this information to gain
+                        insight in the positive emotions or feelings that are
+                        least present and may need further attention (see the
+                        tool: positive emotion brainstorm), this feature of the
+                        wheel should not be used to replace or avoid emotions.
+                        For instance, when a client experiences sadness, it is
+                        advisable to allow the sadness to be present rather than
+                        to try to replace it with joyful thoughts (see also the
+                        tool: acceptance of emotions).
+                    </li>
+                </ul>
+            </blockquote>
+        </section>
+        <footer class='my-5 flex flex-col gap-4'>
+            <h2 class='text-2xl font-black'>Citations and Links</h2>
+            <ol class='list-decimal ms-6'>
+                <li>
+                    <cite id='citation-1'
+                        >Willcox, Gloria. 1982. “The Feeling Wheel: A Tool for
+                        Expanding Awareness of Emotions and Increasing
+                        Spontaneity and Intimacy.” Transactional Analysis
+                        Journal 12 (4): 274–76. doi:10.1177/036215378201200411.</cite
+                    >
+                </li>
+                <li>
+                    <cite id='citation-2'
+                        ><a
+                            class='underline'
+                            href='https://www.gnyha.org/wp-content/uploads/2020/05/The-Feeling-Wheel-Positive-Psycology-Program.pdf'
+                            >"Positive Psychology Practitioner's Toolit"</a
+                        ></cite
+                    >
+                </li>
+            </ol>
+        </footer>
+    </article>
 </BaseLayout>
